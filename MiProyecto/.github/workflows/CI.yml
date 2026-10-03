@@ -1,0 +1,27 @@
+name: CI Pipeline
+
+on:
+    push:
+        branches: 
+            - desarrollo
+            pull_request:
+                branches:
+                    - produccion
+
+                    jobs: 
+                        build:
+                            runs-on: ubuntu-latest
+
+                    steps: 
+                        - name: Descargar repositorio
+                        uses: actions/checkout@v4
+
+                        - name: Instalar Node.js
+                        uses: actions/setup-node@v4
+                        with:
+                            node-version: 20
+                        - name: Instalar dependencias
+                        run: npm install
+
+                        - name: Ejecutar pruebas
+                        run: npm test -- --watch=false
