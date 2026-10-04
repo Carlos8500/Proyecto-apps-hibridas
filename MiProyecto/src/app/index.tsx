@@ -88,7 +88,7 @@ export default function App() {
           ]}
           onPress={agregarMateria}
         >
-          <Text style={styles.buttonText}>Agregar Materia</Text>
+          <Text style={styles.buttonText}>Agregar Materia en curso</Text>
         </Pressable>
       </View>
 
